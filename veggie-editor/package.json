@@ -1,0 +1,35 @@
+{
+  "name": "veggie-editor",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@jsonforms/material-renderers": "^2.1.0",
+    "@jsonforms/material-tree-renderer": "^2.1.0",
+    "@theia/core": "latest",
+    "lodash": "^4.17.11",
+    "react-redux": "^6.0.0",
+    "recompose": "^0.30.0",
+    "theia-tree-editor": "https://github.com/eclipsesource/theia-tree-editor.git#master"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "frontend": "lib/browser/veggie-editor-frontend-module"
+    }
+  ]
+}
