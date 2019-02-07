@@ -13,9 +13,9 @@ const { mode }  = yargs.option('mode', {
 }).argv;
 const development = mode === 'development';
 
-const monacoEditorCorePath = development ? '/home/fgareis/Documents/Dev/TUM/WEB/tree-editor/veggie-editor/node_modules/@typefox/monaco-editor-core/dev/vs' : '/home/fgareis/Documents/Dev/TUM/WEB/tree-editor/veggie-editor/node_modules/@typefox/monaco-editor-core/min/vs';
-const monacoCssLanguagePath = '/home/fgareis/Documents/Dev/TUM/WEB/tree-editor/veggie-editor/node_modules/monaco-css/release/min';
-const monacoHtmlLanguagePath = '/home/fgareis/Documents/Dev/TUM/WEB/tree-editor/veggie-editor/node_modules/monaco-html/release/min';
+const monacoEditorCorePath = development ? '/home/fgareis/Documents/Dev/TUM/WEB/jsonforms-tree-editor/node_modules/@typefox/monaco-editor-core/dev/vs' : '/home/fgareis/Documents/Dev/TUM/WEB/jsonforms-tree-editor/node_modules/@typefox/monaco-editor-core/min/vs';
+const monacoCssLanguagePath = '/home/fgareis/Documents/Dev/TUM/WEB/jsonforms-tree-editor/node_modules/monaco-css/release/min';
+const monacoHtmlLanguagePath = '/home/fgareis/Documents/Dev/TUM/WEB/jsonforms-tree-editor/node_modules/monaco-html/release/min';
 
 module.exports = {
     entry: path.resolve(__dirname, 'src-gen/frontend/index.js'),
