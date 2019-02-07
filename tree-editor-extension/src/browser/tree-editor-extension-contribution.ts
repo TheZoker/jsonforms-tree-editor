@@ -7,31 +7,31 @@ import { SelectionService } from "@theia/core";
 import { FileDownloadService } from "@theia/filesystem/lib/browser/download/file-download-service";
 import URI from '@theia/core/lib/common/uri';
 
-export const VeggieEditorCommand = {
-  id: 'VeggieEditor.command',
+export const TreeEditorExtensionCommand = {
+  id: 'TreeEditorExtension.command',
   label: "Shows a message"
 };
 
 @injectable()
-export class VeggieEditorCommandContribution implements CommandContribution {
+export class TreeEditorExtensionCommandContribution implements CommandContribution {
 
   constructor(
     @inject(MessageService) private readonly messageService: MessageService,
   ) { }
 
   registerCommands(registry: CommandRegistry): void {
-    registry.registerCommand(VeggieEditorCommand, {
+    registry.registerCommand(TreeEditorExtensionCommand, {
       execute: () => this.messageService.info('Hello World!')
     });
   }
 }
 
 @injectable()
-export class VeggieEditorMenuContribution implements MenuContribution {
+export class TreeEditorExtensionMenuContribution implements MenuContribution {
 
   registerMenus(menus: MenuModelRegistry): void {
     menus.registerMenuAction(CommonMenus.EDIT_FIND, {
-      commandId: VeggieEditorCommand.id,
+      commandId: TreeEditorExtensionCommand.id,
       label: 'Say Hello'
     });
   }

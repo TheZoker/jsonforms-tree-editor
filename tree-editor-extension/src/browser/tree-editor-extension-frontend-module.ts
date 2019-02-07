@@ -1,5 +1,5 @@
 // necessary imports
-import { VeggieEditorCommandContribution, VeggieEditorMenuContribution, SmartHomeTreeEditorContribution } from './veggie-editor-contribution';
+import { TreeEditorExtensionCommandContribution, TreeEditorExtensionMenuContribution, SmartHomeTreeEditorContribution } from './tree-editor-extension-contribution';
 import {
   CommandContribution,
   MenuContribution, 
@@ -30,8 +30,8 @@ export default new ContainerModule(bind => {
   let LIGHT_THEME_ID = "light";
   ThemeService.get().setCurrentTheme(LIGHT_THEME_ID);
 
-  bind(CommandContribution).to(VeggieEditorCommandContribution);
-  bind(MenuContribution).to(VeggieEditorMenuContribution);
+  bind(CommandContribution).to(TreeEditorExtensionCommandContribution);
+  bind(MenuContribution).to(TreeEditorExtensionMenuContribution);
   bind<WidgetFactory>(WidgetFactory).toDynamicValue(ctx => ({
     id: 'theia-tree-editor',
     async createWidget(uri: NavigatableWidgetOptions): Promise<TreeEditorWidget> {

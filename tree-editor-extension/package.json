@@ -1,5 +1,5 @@
 {
-  "name": "veggie-editor",
+  "name": "tree-editor-extension",
   "keywords": [
     "theia-extension"
   ],
@@ -9,13 +9,14 @@
     "src"
   ],
   "dependencies": {
-    "@jsonforms/material-renderers": "^2.1.0",
-    "@jsonforms/material-tree-renderer": "^2.1.0",
+    "@jsonforms/material-renderers": "^2.2.0",
+    "@jsonforms/material-tree-renderer": "^2.2.0",
+    "@jsonforms/react": "^2.2.0",
     "@theia/core": "latest",
     "lodash": "^4.17.11",
     "react-redux": "^6.0.0",
     "recompose": "^0.30.0",
-    "theia-tree-editor": "https://github.com/eclipsesource/theia-tree-editor.git#master"
+    "theia-tree-editor": "https://github.com/TheZoker/theia-tree-editor.git#fix-labels"
   },
   "devDependencies": {
     "rimraf": "latest",
@@ -29,7 +30,7 @@
   },
   "theiaExtensions": [
     {
-      "frontend": "lib/browser/veggie-editor-frontend-module"
+      "frontend": "lib/browser/tree-editor-extension-frontend-module"
     }
   ]
 }

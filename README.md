@@ -1,73 +1,19 @@
-# veggie-editor
-The example of how to build the Theia-based applications with the veggie-editor.
+# JSONForms Tree Editor
+This is a theia editor running the jsonforms tree editor extension
+
+## Prerequisites
+
+*NOTE:* This instruction has been tested within the following environment. If you have any issue, try to get the same versions:
+
+```
+npm 6.4.1
+node 11.4.2
+yarn 1.13.0
+```
 
 ## Getting started
 
-Install [nvm](https://github.com/creationix/nvm#install-script).
-
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
-
-Install npm and node.
-
-    nvm install 8
-    nvm use 8
-
-Install yarn.
-
-    npm install -g yarn
-
-## Running the browser example
-
-    yarn rebuild:browser
-    cd browser-app
-    yarn start
-
-Open http://localhost:3000 in the browser.
-
-## Running the Electron example
-
-    yarn rebuild:electron
-    cd electron-app
-    yarn start
-
-## Developing with the browser example
-
-Start watching of veggie-editor.
-
-    cd veggie-editor
-    yarn watch
-
-Start watching of the browser example.
-
-    yarn rebuild:browser
-    cd browser-app
-    yarn watch
-
-Launch `Start Browser Backend` configuration from VS code.
-
-Open http://localhost:3000 in the browser.
-
-## Developing with the Electron example
-
-Start watching of veggie-editor.
-
-    cd veggie-editor
-    yarn watch
-
-Start watching of the electron example.
-
-    yarn rebuild:electron
-    cd electron-app
-    yarn watch
-
-Launch `Start Electron Backend` configuration from VS code.
-
-## Publishing veggie-editor
-
-Create a npm user and login to the npm registry, [more on npm publishing](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-    npm login
-
-Publish packages with lerna to update versions properly across local packages, [more on publishing with lerna](https://github.com/lerna/lerna#publish).
-
-    npx lerna publish
+1. Run `yarn` within the root folder
+2. Run `yarn start` within the `browser-app` directory
+3. Run `yarn watch --mode development` within the `browser-app` directory
+4. Run `yarn watch` within the `tree-editor-extension` directory

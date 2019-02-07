@@ -1,17 +1,19 @@
 import { defaultProps } from 'recompose';
 import { combineReducers, createStore, Store } from 'redux';
 import { materialFields, materialRenderers } from '@jsonforms/material-renderers';
+import { Property } from '@jsonforms/material-tree-renderer';
+import * as _ from 'lodash';
 import {
   Actions,
   jsonformsReducer,
   RankedTester
 } from '@jsonforms/core';
 
-import { calculateLabel, filterPredicate, TreeEditorApp } from 'theia-tree-editor';
+import { calculateLabel, TreeEditorApp } from 'theia-tree-editor';
 
-import schema from './schema';
+import uiMetaSchema from './schema';
 
-import {labels, modelMapping, uischemas} from './config';
+import { labels, modelMapping } from './config';
 
 
 const imageGetter = (schemaId: string) => 'icon-test';
@@ -28,12 +30,6 @@ export const initStore = async() => {
     jsonforms: {
       renderers,
       fields,
-      treeWithDetail: {
-        // imageMapping: imageProvider,
-        labelMapping: labels,
-        modelMapping,
-        uiSchemata: uischemas
-      }
     }
   };
 
@@ -47,15 +43,29 @@ export const initStore = async() => {
     { ...jsonforms }
   );
 
-  store.dispatch(Actions.init({}, schema, uischema));
+  store.dispatch(Actions.init({}, uiMetaSchema, uischema));
 
   return store;
+};
+
+export const filterPredicate = (data: Object) => {
+  return (property: Property): boolean => {
+    if (!_.isEmpty(modelMapping) &&
+      !_.isEmpty(modelMapping.mapping)) {
+      if (data[modelMapping.attribute]) {
+        return property.schema.$id === modelMapping.mapping[data[modelMapping.attribute]];
+      }
+      return true;
+    }
+
+    return false;
+  };
 };
 
 export default defaultProps(
   {
     'filterPredicate': filterPredicate,
-    'labelProviders': {forData: calculateLabel(labels)},
+    'labelProvider': calculateLabel(labels),
     'imageProvider': imageGetter
   }
 )(TreeEditorApp);

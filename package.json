@@ -9,6 +9,6 @@
     "lerna": "2.4.0"
   },
   "workspaces": [
-    "veggie-editor", "browser-app", "electron-app"
+    "tree-editor-extension", "browser-app", "electron-app"
   ]
 }
