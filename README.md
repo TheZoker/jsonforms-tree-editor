@@ -7,7 +7,7 @@ This is a theia editor running the jsonforms tree editor extension
 
 ```
 npm 6.4.1
-node 11.4.2
+node 11.4.0
 yarn 1.13.0
 ```
 
